@@ -40,9 +40,9 @@ namespace AcmeCorp.Repository
         public async Task<List<Blogs>> Get(bool active)
         {
             if(active)
-                return await _context.Blogs.Where(b => b.Active == true).ToListAsync();
+                return await _context.Blogs.Where(b => b.Active == true).OrderByDescending(b => b.CreationDate).ToListAsync();
 
-            return await _context.Blogs.ToListAsync();
+            return await _context.Blogs.OrderByDescending(b => b.CreationDate).ToListAsync();
         }
 
         public async Task<Blogs> GetById(Guid id)
