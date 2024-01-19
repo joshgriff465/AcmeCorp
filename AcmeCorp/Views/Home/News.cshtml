@@ -1,0 +1,19 @@
+﻿@model IEnumerable<AcmeCorp.Data.Models.News>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.ShortDescription</p>
+                    <a href="#" class="card-link">View</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

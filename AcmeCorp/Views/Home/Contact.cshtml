@@ -1,0 +1,67 @@
+﻿@model AcmeCorp.ViewModels.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<form asp-antiforgery="true">
+    @if (TempData["flash"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+            <span class="sr-only">Success:</span>
+            @TempData["flash"]
+        </div>        
+    }
+
+    <div class="form-horizontal">
+        <h4>Contact Us</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" asp-for="Email"></label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="@Html.DisplayName("Email")" asp-for="Email">
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" asp-for="Name"></label>
+            <div class="col-md-10">
+                 <input type="text" class="form-control" placeholder="@Html.DisplayName("Name")" asp-for="Name" name="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" asp-for="Message"></label>
+            <div class="col-md-10">
+                 <input type="text" class="form-control" placeholder="@Html.DisplayName("Message")" asp-for="Message">
+                <span class="text-danger" asp-validation-for="Message"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+}

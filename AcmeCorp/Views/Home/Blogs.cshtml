@@ -1,0 +1,22 @@
+﻿@model IEnumerable<AcmeCorp.Data.Models.Blogs>
+@{
+    ViewBag.Title = "Blogs";
+}
+
+<div class="row">
+    @foreach (var blog in Model)
+    {
+        <div class="col-md-4 mb-3 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/Content/Images/@blog.ImageUrl" alt="Card image cap">
+              <div class="card-body mb-5">
+                <h5 class="card-title">@blog.Title</h5>
+                <p class="card-text">@blog.ShortDescription</p>
+                <a href="/Home/Blog/@blog.BlogsId" class="btn btn-primary">View blog</a>
+                <footer class="blockquote-footer">Release date: @String.Format("{0:F}", blog.ReleaseDate) </footer>
+              </div>
+            </div>
+        </div>
+    }
+
+</div>

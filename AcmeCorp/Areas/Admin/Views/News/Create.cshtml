@@ -1,0 +1,65 @@
+﻿@model AcmeCorp.Data.Models.News
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create News";
+}
+
+<div class="container pt-md-5">
+    <div class="row mb-5 align-items-center">
+        <div class="col-12">
+            <div class="card">
+                <form asp-antiforgery="true">
+                    <div class="card-header">
+                        <h5 class="card-title">@ViewData["Title"]</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label class="col-12 col-lg-3 col-form-label" asp-for="Title"></label>
+                            <div class="col-12 col-lg-9">
+                                <div class="input-group">
+                                    <input type="text" asp-for="Title" class="form-control" placeholder="@Html.DisplayNameFor(o => o.Title)" />
+                                    <div class="invalid-feedback d-block">
+                                        <span asp-validation-for="Title"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-12 col-lg-3 col-form-label" asp-for="Seo"></label>
+                            <div class="col-12 col-lg-9">
+                                <div class="input-group">
+                                    <input type="text" asp-for="Seo" class="form-control" placeholder="@Html.DisplayNameFor(o => o.Seo)" />
+                                    <div class="invalid-feedback d-block">
+                                        <span asp-validation-for="Seo"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-12 col-lg-3 col-form-label" asp-for="ShortDescription"></label>
+                            <div class="col-12 col-lg-9">
+                                <div class="input-group">
+                                    <input type="text" asp-for="ShortDescription" class="form-control" placeholder="@Html.DisplayNameFor(o => o.ShortDescription)" />
+                                    <div class="invalid-feedback d-block">
+                                        <span asp-validation-for="ShortDescription"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

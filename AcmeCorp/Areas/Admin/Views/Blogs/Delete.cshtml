@@ -1,0 +1,31 @@
+﻿@model AcmeCorp.Data.Models.Blogs
+
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Delete Blogs";
+}
+
+<div class="container pt-md-5">
+    <div class="row mb-5 align-items-center">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <form asp-antiforgery="true">
+                    <input type="hidden" name="id" asp-for="BlogsId" />
+
+                    <div class="card-header">
+                        <h5 class="card-title">@ViewData["Title"]</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-10 offset-1 text-center">
+                            <p>Are you sure you wish to delete this?</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

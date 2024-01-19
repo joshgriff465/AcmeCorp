@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.image-preview {
+    max-height: 125px;
+
+}
+.help-note {
+    color: red;
+    font-style: italic;
+    padding-left: 10px;
+    font-size: 14px;
+    vertical-align: central;
+}
+.dataTableHeader {
+    max-width: 200px;
+}
+.blockquote-footer {
+    position: absolute;
+    bottom: 0px;
+}

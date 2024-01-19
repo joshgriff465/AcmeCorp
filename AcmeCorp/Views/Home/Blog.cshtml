@@ -1,0 +1,21 @@
+﻿@model AcmeCorp.Data.Models.Blogs
+@{
+    ViewBag.Title = "Blogs";
+}
+
+<div class="row">
+         <h2>Unfinished shows the single blog post, but is just code copied from the list of blog posts
+         </h2>
+        <div class="col-md-4 mb-3 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/Content/Images/@Model.ImageUrl" alt="Card image cap">
+              <div class="card-body mb-5">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.ShortDescription</p>
+                <footer class="blockquote-footer">Release date: @String.Format("{0:F}", Model.ReleaseDate) </footer>
+              </div>
+            </div>
+        </div>
+    
+
+</div>
